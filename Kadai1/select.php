@@ -20,15 +20,21 @@ $status = $stmt->execute();
 $view="";
 if ($status==false) {
     //execute（SQL実行時にエラーがある場合）
-  $error = $stmt->errorInfo();
-  exit("ErrorQuery:".$error[2]);
-
+    sql_error($stmt);
 }else{
   //Selectデータの数だけ自動でループしてくれる
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= '<p>';
+
+    $view .= '<a href="detail.php?id='. $result['id']. '">';
     $view .= h($result['date']) . '/' . h($result['portfolio'])  . '/' . h($result['author']) . '/' . h($result['URL'])  . '/' . h($result['content']);
+    $view .= '</a>';
+
+    $view .= '<a href="delete.php?id='. $result['id']. '">';
+    $view .= '[ 削除 ]';
+    $view .= '</a>';
+
     $view .= '</p>';
   }
 
@@ -62,7 +68,10 @@ if ($status==false) {
 
 <!-- Main[Start] -->
 <div>
-    <div class="container jumbotron"><?= $view ?></div>
+    <div class="container jumbotron">
+      <a href="detail.php"></a>
+      <?= $view ?>
+    </div>
 </div>
 <!-- Main[End] -->
 
