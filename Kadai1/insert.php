@@ -29,7 +29,7 @@ if($status==false){
   sql_error($stmt);
 }else{
   //５．index.phpへリダイレクト
-  header('location: index.php');
+  rediret('index.php');
 
 }
 ?>
