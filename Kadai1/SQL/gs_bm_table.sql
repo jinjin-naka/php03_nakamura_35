@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost:8889
--- 生成日時: 2022 年 1 月 23 日 05:24
+-- 生成日時: 2022 年 1 月 27 日 17:35
 -- サーバのバージョン： 5.7.34
 -- PHP のバージョン: 7.4.21
 
@@ -43,8 +43,8 @@ CREATE TABLE `gs_bm_table` (
 INSERT INTO `gs_bm_table` (`id`, `portfolio`, `author`, `URL`, `content`, `date`) VALUES
 (1, '高配当株ポートフォリオ', 'リベ大', 'https://liberaluni.com/high-dividend', '一定程度資産があった上で取り崩さずに所得化する方法がよかった', '2022-01-22 15:05:26'),
 (2, 'S&P500ポートフォリオ', 'リベ大', 'XYZ', '基本的でよかった', '2022-01-22 15:06:37'),
-(3, '高配当株ポートフォリオ', 'リベ大', 'https://liberaluni.com/high-dividend', 'aaaaa', '2022-01-23 12:02:02'),
-(4, '高配当株ポートフォリオ', 'リベ大', 'XYZ', 'ああああ\r\n', '2022-01-23 14:11:49');
+(3, '高配当株ポートフォリオ', 'リベ大', 'https://liberaluni.com/high-dividend', 'aaaaa', '2022-01-28 02:23:43'),
+(5, '高配当株ポートフォリオ', 'リベ大', 'https://liberaluni.com/high-dividend', '面白い', '2022-01-28 02:15:32');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -64,7 +64,7 @@ ALTER TABLE `gs_bm_table`
 -- テーブルの AUTO_INCREMENT `gs_bm_table`
 --
 ALTER TABLE `gs_bm_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

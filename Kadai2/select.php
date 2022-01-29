@@ -10,7 +10,7 @@ require_once('funcs.php');
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$stmt = $pdo->prepare('SELECT * FROM gs_an_table');
+$stmt = $pdo->prepare('SELECT * FROM gs_user_table');
 $status = $stmt->execute();
 
 //３．データ表示
@@ -26,7 +26,7 @@ if ($status === false) {
         $view .= '<p>';
         
         $view .= '<a href="detail.php?id='. $result['id']. '">';
-        $view .= $result['indate'] . '：' . $result['name'];
+        $view .= $result['indate'] . '：' . $result['name']. '：' . $result['kanri_flg']. '：' . $result['life_flg'];
         $view .= '</a>';
 
         $view .= '<a href="delete.php?id='. $result['id']. '">';
@@ -46,7 +46,7 @@ if ($status === false) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>フリーアンケート表示</title>
+    <title>管理画面</title>
     <link rel="stylesheet" href="css/range.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>

@@ -26,11 +26,12 @@
     <form method="POST" action="insert.php">
         <div class="jumbotron">
             <fieldset>
-                <legend>フリーアンケート</legend>
+                <legend>ユーザー登録</legend>
                 <label>名前：<input type="text" name="name"></label><br>
-                <label>Email：<input type="text" name="email"></label><br>
-                <label>年齢：<input type="text" name="age"></label><br>
-                <label><textarea name="content" rows="4" cols="40"></textarea></label><br>
+                <label>ID：<input type="text" name="lid"></label><br>
+                <label>PW：<input type="text" name="lpw"></label><br>
+                <label>管理者：<input type="checkbox" name="kanri_flg"></label><br>
+                <label>退職者：<input type="checkbox" name="life_flg"></label><br>
                 <input type="submit" value="送信">
             </fieldset>
         </div>

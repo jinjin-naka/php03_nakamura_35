@@ -16,7 +16,7 @@
  $pdo = db_conn();
 
  //３．データ登録SQL作成
- $stmt = $pdo->prepare('SELECT * FROM gs_an_table where id = :id');
+ $stmt = $pdo->prepare('SELECT * FROM gs_user_table where id = :id');
  $stmt->bindValue(':id',$id, PDO::PARAM_INT);
  $status = $stmt->execute();
 
@@ -67,11 +67,12 @@ if ($status === false) {
     <form method="POST" action="update.php">
         <div class="jumbotron">
             <fieldset>
-                <legend>フリーアンケート</legend>
+                <legend>ユーザー登録</legend>
                 <label>名前：<input type="text" name="name" value=<?= $view['name'] ?>></label><br>
-                <label>Email：<input type="text" name="email" value=<?= $view['email'] ?>></label><br>
-                <label>年齢：<input type="text" name="age" value=<?= $view['age'] ?>></label><br>
-                <label><textarea name="content" rows="4" cols="40" ><?= $view['content'] ?></textarea></label><br>
+                <label>ID：<input type="text" name="lid" value=<?= $view['lid'] ?>></label><br>
+                <label>PW：<input type="text" name="lpw" value=<?= $view['lpw'] ?>></label><br>
+                <label>管理者：<input type="checkbox" name="kanri_flg" value=<?= $view['kanri_flg'] ?>></label><br>
+                <label>退職者：<input type="checkbox" name="life_flg" value=<?= $view['life_flg'] ?>></label><br>
                 <input type="hidden" name="id" value=<?= $view['id'] ?>>
                 <input type="submit" value="送信">
             </fieldset>

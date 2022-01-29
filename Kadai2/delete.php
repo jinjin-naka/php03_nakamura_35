@@ -11,7 +11,7 @@ require_once('funcs.php');
 $pdo = db_conn();
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare('DELETE from gs_an_table 
+$stmt = $pdo->prepare('DELETE from gs_user_table 
                     where id = :id
                     ');
 
